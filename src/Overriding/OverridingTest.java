@@ -18,7 +18,12 @@ public class OverridingTest {
 		overridingParent2.parentMethod1();
 		overridingParent2.parentMethod2();//child class method gets called
 		
-		
+		varResolutionParent p= new varResolutionParent();
+		varResolutionChild c = new varResolutionChild();
+		varResolutionParent pc = new varResolutionChild();
+		System.out.println(p.x);
+		System.out.println(c.x);System.out.println(pc.x);//Variable resolution always takes care based on reference type irrespective of whether the variable is static or non static (overriding concept applicable only for methods and not for variables)
+
 		
 	}
 
@@ -34,5 +39,12 @@ public class OverridingTest {
  (Parent method)Object-(Child method)Object/String/StringBuffer
  (Parent method)Number-(Child method)Number/Integer
  (Parent method)String-(Child method)Object-NOT ALLOWED
+ 
+ If a child class method throws any checked exception compulsory parent class method should throw the same checked exception or its parent otherwise we will get compile time error.But there are no restrictions for unchecked exceptions.
+ We cannot override a static method as non static method. Otherwise we will get compile time error.
+ If both parent and child class method are static then we wont get any compile time error .It seems overriding concept applicable for static method but it is not overriding and it is method hiding.
+ 
+ Static vs. Non-static:Overriding is for instance methods (non-static), where the method call is resolved at runtime based on the actual object type.
+Method Hiding is for static methods, where the method call is resolved at compile-time based on the reference type.
  */
 

@@ -12,8 +12,8 @@ public class OverridingChild extends OverridingParent {
 		return "returnString";
 	}
 	
-	public String m6()
-	{
-		return "returnString";
-	}
+//	public String m6()
+//	{
+//		return "returnString";
+//	}
 }
